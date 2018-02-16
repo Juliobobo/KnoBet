@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">KnoBet</string>
+    <string name="userName">User name</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="signUp">Sign Up</string>
+    <string name="signIn">Sign In</string>
+    <string name="fill">Please fill full informations</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="alreadyUser">User already exists !</string>
+    <string name="succesUser">User registration succes !</string>
+    <string name="loginOk">Login ok !</string>
+    <string name="wrongPwd">Wrong password !</string>
+    <string name="enterUserName">Please enter your user name</string>
+    <string name="notExitUser">User is not exist !</string>
+    <string name="categories">Categories</string>
+    <string name="ranking">Ranking</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="categoryName">Category Name</string>
+</resources>

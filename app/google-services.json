@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "352289080225",
+    "firebase_url": "https://knobet-7a702.firebaseio.com",
+    "project_id": "knobet-7a702",
+    "storage_bucket": "knobet-7a702.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352289080225:android:1928358f0c0a8082",
+        "android_client_info": {
+          "package_name": "fr.kb.knobet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352289080225-2jiid4gro8811rrl83qmm0bnmn4vp759.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.kb.knobet",
+            "certificate_hash": "0fdb5a089e8635303fcafc2ea77322bb4c0e9e6a"
+          }
+        },
+        {
+          "client_id": "352289080225-nc6kc3resqgq6qkl2avumn2449l24vj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpN0vDy9EjIddZiQtNshvqcmwX3ilKJZ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352289080225-nc6kc3resqgq6qkl2avumn2449l24vj2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
