@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#030516</color>
     <color name="colorAccent">#565866</color>
     <color name="categoryNameColor">#4f0e0d0e</color>
+    <color name="btnPlayColor">#ad1457</color>
+    <color name="myBtn">#1cb3bc</color>
+    <color name="btnAnswer">#ff8a80</color>
 </resources>

@@ -1,6 +1,7 @@
 package fr.kb.knobet;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import fr.kb.knobet.Common.Common;
 import fr.kb.knobet.Model.User;
 
 public class MainActivity extends AppCompatActivity {
@@ -69,8 +71,14 @@ public class MainActivity extends AppCompatActivity {
                     if(!user.isEmpty()){
                         User log = dataSnapshot.child(user).getValue(User.class);
                         if(log.getPassword().equals(pwd)){
-                            Toast.makeText(MainActivity.this, R.string.loginOk,
-                                    Toast.LENGTH_LONG).show();
+                            //Toast.makeText(MainActivity.this, R.string.loginOk,
+                                    //Toast.LENGTH_LONG).show();
+
+                            Intent homeActivity = new Intent(MainActivity.this, Home.class);
+                            Common.currentUser = log;
+                            startActivity(homeActivity);
+                            finish();
+
                         }else{
                             Toast.makeText(MainActivity.this, R.string.wrongPwd,
                                     Toast.LENGTH_LONG).show();

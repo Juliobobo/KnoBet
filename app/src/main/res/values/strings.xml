@@ -16,8 +16,15 @@
     <string name="notExitUser">User is not exist !</string>
     <string name="categories">Categories</string>
     <string name="ranking">Ranking</string>
+    <string name="play">Play</string>
+    <string name="answerA">Answer A</string>
+    <string name="answerB">Answer B</string>
+    <string name="answerC">Answer C</string>
+    <string name="answerD">Answer D</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="categoryName">Category Name</string>
+    <string name="tryAgain">Try Again !</string>
 </resources>

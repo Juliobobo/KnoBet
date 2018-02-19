@@ -5,30 +5,30 @@ package fr.kb.knobet.Model;
  */
 
 public class Category {
-    private String name;
-    private String image;
+    private String Name; // Same word than Firebase
+    private String Image;
 
     public Category() {
     }
 
     public Category(String name, String image) {
-        this.name = name;
-        this.image = image;
+        Name = name;
+        Image = image;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        Name = name;
     }
 
     public String getImage() {
-        return image;
+        return Image;
     }
 
     public void setImage(String image) {
-        this.image = image;
+        Image = image;
     }
 }
