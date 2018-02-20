@@ -1,6 +1,7 @@
 package fr.kb.knobet;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -21,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import fr.kb.knobet.Common.Common;
+import fr.kb.knobet.Interface.ItemClickListener;
 import fr.kb.knobet.Interface.RankingCallBack;
 import fr.kb.knobet.Model.Category;
 import fr.kb.knobet.Model.QuestionScore;
@@ -61,6 +63,18 @@ public class RankingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         myFragment = inflater.inflate(R.layout.fragment_ranking, container, false);
 
+        // Init view
+        rankingList = (RecyclerView)myFragment.findViewById(R.id.rankingList);
+        layoutManager = new LinearLayoutManager(getActivity());
+        rankingList.setHasFixedSize(true);
+
+        // Firebase sort list with ascending with orderByChild
+        // Need to reverse our Recycler Data by LayoutManager
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
+        rankingList.setLayoutManager(layoutManager);
+
+
         // Implement callback
         updateScore(Common.currentUser.getUserName(), new RankingCallBack<Ranking>() {
             @Override
@@ -69,12 +83,41 @@ public class RankingFragment extends Fragment {
                 rankingTable.child(ranking.getUserName())
                         .setValue(ranking);
 
-                showRanking(); // After upload, we will show rank
+                //showRanking(); // After upload, we will show rank
 
 
             }
         });
-        
+
+        // Set adapter
+        adapter = new FirebaseRecyclerAdapter<Ranking, RankingViewHolder>(
+                Ranking.class,
+                R.layout.ranking_layout,
+                RankingViewHolder.class,
+                rankingTable.orderByChild("score")
+        ) {
+            @Override
+            protected void populateViewHolder(RankingViewHolder viewHolder, final Ranking model, int position) {
+                viewHolder.txtName.setText(model.getUserName());
+                viewHolder.txtScore.setText(String.valueOf(model.getScore()));
+
+                // When click on rank
+                viewHolder.setItemClickListener(new ItemClickListener() {
+                    @Override
+                    public void onClick(View view, int position, boolean isLongClick) {
+                        Intent scoreDetail = new Intent(getActivity(), ScoreDetail.class);
+                        scoreDetail.putExtra("viewUser", model.getUserName());
+                        startActivity(scoreDetail);
+                    }
+                });
+
+            }
+        };
+
+
+        adapter.notifyDataSetChanged();
+        rankingList.setAdapter(adapter);
+
         return myFragment;
     }
 

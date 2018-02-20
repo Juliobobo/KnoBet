@@ -11,7 +11,7 @@ import fr.kb.knobet.Model.User;
  */
 
 public class Common {
-    public static String categoryId;
+    public static String categoryId, categoryName;
     public static User currentUser;
     public static List<Question> questionList = new ArrayList<>();
 }
